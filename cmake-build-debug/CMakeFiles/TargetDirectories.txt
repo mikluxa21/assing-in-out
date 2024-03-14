@@ -1,3 +1,0 @@
-/home/user/CLionProjects/assing-in-out/cmake-build-debug/CMakeFiles/main.dir
-/home/user/CLionProjects/assing-in-out/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/user/CLionProjects/assing-in-out/cmake-build-debug/CMakeFiles/rebuild_cache.dir
