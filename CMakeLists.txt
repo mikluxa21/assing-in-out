@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.15.0)
 cmake_policy(SET CMP0016 NEW)
-set(CMAKE_CXX_STANDART 11)
 
-add_executable(main main.cpp)
+project(async_server VERSION 1.0.0 DESCRIPTION "Знакомство с асинхронным вводом/выводом на C++")
+
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+enable_testing()
+add_subdirectory(test)
