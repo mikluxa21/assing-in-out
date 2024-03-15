@@ -3,3 +3,4 @@ blocking_tcp_echo_client
 main
 /build/
 /**/build/
+cmake-build-debug
