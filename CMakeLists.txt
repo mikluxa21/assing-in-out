@@ -6,4 +6,5 @@ project(async_server VERSION 1.0.0 DESCRIPTION "Знакомство с асин
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 enable_testing()
+
 add_subdirectory(test)
