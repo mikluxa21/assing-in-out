@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="13ebad3e-72e2-4094-9314-59c65fe501c5" name="Changes" comment="Resolve git files">
+      <change afterPath="$PROJECT_DIR$/.idea/assing-in-out.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mikluxa21&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="816b9948-0110-4ab3-b09c-deb01e331dd0" />
+        <option name="url" value="https://github.com/mikluxa21/assing-in-out.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.4" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2dfsZNj6lklzaHMYqeOZgFzyX87" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.async_tcp_echo_server.cpp.executor": "Run",
+    "C/C++ File.blocking_tcp_echo_client.cpp.executor": "Run",
+    "CMake Debug.async_server.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "dcfadd00",
+    "last_opened_file_path": "/home/user/CLionProjects/assing-in-out",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/async_server" />
+      <recent name="$PROJECT_DIR$/src/async_client" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Debug.async_server">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="async_server" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="async_tcp_echo_server.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assing-in-out" TARGET_NAME="async_tcp_echo_server.cpp" CONFIG_NAME="async_tcp_echo_server.cpp">
+      <option name="sourceFile" value="src/async_client/async_tcp_echo_server.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="blocking_tcp_echo_client.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assing-in-out" TARGET_NAME="blocking_tcp_echo_client.cpp" CONFIG_NAME="blocking_tcp_echo_client.cpp">
+      <option name="sourceFile" value="src/async_server/blocking_tcp_echo_client.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="C/C++ File.async_tcp_echo_server.cpp" />
+      <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
+      <item itemvalue="CMake Debug.async_server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="CMake Debug.async_server" />
+        <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
+        <item itemvalue="C/C++ File.async_tcp_echo_server.cpp" />
+        <item itemvalue="CMake Debug.async_server" />
+        <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13ebad3e-72e2-4094-9314-59c65fe501c5" name="Changes" comment="" />
+      <created>1710410524160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710410524160</updated>
+      <workItem from="1710410526396" duration="53000" />
+      <workItem from="1710410600058" duration="1580000" />
+      <workItem from="1710412381231" duration="588000" />
+      <workItem from="1710501137448" duration="190000" />
+      <workItem from="1710501347929" duration="2453000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1710411424376</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710411424376</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1710411458375</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710411458375</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created template project struct without tests">
+      <option name="closed" value="true" />
+      <created>1710412278308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710412278310</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated project struct">
+      <option name="closed" value="true" />
+      <created>1710412507408</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710412507408</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated project struct">
+      <option name="closed" value="true" />
+      <created>1710412534769</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710412534769</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add tests files to struct">
+      <option name="closed" value="true" />
+      <created>1710412848690</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710412848690</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created .gitignore file">
+      <option name="closed" value="true" />
+      <created>1710501926411</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710501926411</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created clear project tree">
+      <option name="closed" value="true" />
+      <created>1710502433491</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710502433491</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created clear project tree">
+      <option name="closed" value="true" />
+      <created>1710502779917</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710502779917</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Swap client and server file">
+      <option name="closed" value="true" />
+      <created>1710503033409</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710503033409</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Resolve git files">
+      <option name="closed" value="true" />
+      <created>1710503651181</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710503651181</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Resolve git files">
+      <option name="closed" value="true" />
+      <created>1710503747421</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710503747421</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Created template project struct without tests" />
+    <MESSAGE value="Updated project struct" />
+    <MESSAGE value="Add tests files to struct" />
+    <MESSAGE value="Created .gitignore file" />
+    <MESSAGE value="Created clear project tree" />
+    <MESSAGE value="Swap client and server file" />
+    <MESSAGE value="Resolve git files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve git files" />
+  </component>
+</project>
