@@ -6,3 +6,4 @@ main
 cmake-build-debug
 /.igdea
 /.igdea/*/
+.idea/workspace.xml
