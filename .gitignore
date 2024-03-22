@@ -6,3 +6,9 @@ main
 /.idea
 /.idea/*/
 .idea/workspace.xml
+cmake-build-debug/src/async_server/server
+cmake-build-debug/src/async_client/client
+cmake-build-debug/src
+cmake-build-debug/src/**/
+cmake-build-debug/test
+cmake-build-debug/test/**/
