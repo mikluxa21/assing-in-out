@@ -22,7 +22,7 @@ class session
         : public std::enable_shared_from_this<session>
 {
 public:
-    session(tcp::socket socket)
+    explicit session(tcp::socket socket)
             : socket_(std::move(socket))
     {}
 
@@ -35,17 +35,13 @@ private:
 
     tcp::socket socket_;
     enum { max_length = 1024 };
-    char data_[max_length];
+    char m_data[max_length];
 };
 
 class server
 {
 public:
-    server(boost::asio::io_context& io_context, short port)
-            : acceptor_(io_context, tcp::endpoint(tcp::v4(), port))
-    {
-        do_accept();
-    }
+    server(boost::asio::io_context& io_context, short port);
 
 private:
     void do_accept();

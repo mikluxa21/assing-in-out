@@ -112,13 +112,13 @@ build src/async_client/lib_client: phony src/async_client/CMakeFiles/lib_client.
 
 build cmake_object_order_depends_target_client: phony || cmake_object_order_depends_target_lib_client
 
-build src/async_client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client_unscanned_Debug /home/user/CLionProjects/assing-in-out/src/async_client/main.cpp || cmake_object_order_depends_target_client
+build src/async_client/CMakeFiles/client.dir/src/main.cpp.o: CXX_COMPILER__client_unscanned_Debug /home/user/CLionProjects/assing-in-out/src/async_client/src/main.cpp || cmake_object_order_depends_target_client
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK
-  DEP_FILE = src/async_client/CMakeFiles/client.dir/main.cpp.o.d
+  DEP_FILE = src/async_client/CMakeFiles/client.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -I/home/user/CLionProjects/assing-in-out/src
   OBJECT_DIR = src/async_client/CMakeFiles/client.dir
-  OBJECT_FILE_DIR = src/async_client/CMakeFiles/client.dir
+  OBJECT_FILE_DIR = src/async_client/CMakeFiles/client.dir/src
 
 
 # =============================================================================
@@ -128,7 +128,7 @@ build src/async_client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client_un
 #############################################
 # Link the executable src/async_client/client
 
-build src/async_client/client: CXX_EXECUTABLE_LINKER__client_Debug src/async_client/CMakeFiles/lib_client.dir/src/blocking_tcp_echo_client.cpp.o src/async_client/CMakeFiles/client.dir/main.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 || src/async_client/lib_client
+build src/async_client/client: CXX_EXECUTABLE_LINKER__client_Debug src/async_client/CMakeFiles/lib_client.dir/src/blocking_tcp_echo_client.cpp.o src/async_client/CMakeFiles/client.dir/src/main.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 || src/async_client/lib_client
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0
   OBJECT_DIR = src/async_client/CMakeFiles/client.dir
@@ -209,13 +209,13 @@ build src/async_server/lib_server: phony src/async_server/CMakeFiles/lib_server.
 
 build cmake_object_order_depends_target_server: phony || cmake_object_order_depends_target_lib_server
 
-build src/async_server/CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/user/CLionProjects/assing-in-out/src/async_server/main.cpp || cmake_object_order_depends_target_server
+build src/async_server/CMakeFiles/server.dir/src/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/user/CLionProjects/assing-in-out/src/async_server/src/main.cpp || cmake_object_order_depends_target_server
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK
-  DEP_FILE = src/async_server/CMakeFiles/server.dir/main.cpp.o.d
+  DEP_FILE = src/async_server/CMakeFiles/server.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -I/home/user/CLionProjects/assing-in-out/src
   OBJECT_DIR = src/async_server/CMakeFiles/server.dir
-  OBJECT_FILE_DIR = src/async_server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/async_server/CMakeFiles/server.dir/src
 
 
 # =============================================================================
@@ -225,7 +225,7 @@ build src/async_server/CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_un
 #############################################
 # Link the executable src/async_server/server
 
-build src/async_server/server: CXX_EXECUTABLE_LINKER__server_Debug src/async_server/CMakeFiles/lib_server.dir/src/async_tcp_echo_server.cpp.o src/async_server/CMakeFiles/server.dir/main.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 || src/async_server/lib_server
+build src/async_server/server: CXX_EXECUTABLE_LINKER__server_Debug src/async_server/CMakeFiles/lib_server.dir/src/async_tcp_echo_server.cpp.o src/async_server/CMakeFiles/server.dir/src/main.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 || src/async_server/lib_server
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0
   OBJECT_DIR = src/async_server/CMakeFiles/server.dir

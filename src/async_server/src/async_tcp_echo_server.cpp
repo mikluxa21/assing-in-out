@@ -16,6 +16,13 @@ void session::do_read()
                             {
                                 if (!ec)
                                 {
+                                    std::cout << "Server: ";
+                                    for(auto i: data_)
+                                        if(i != 0)
+                                            std::cout << i;
+                                        else
+                                            break;
+                                    std::cout << std::endl;
                                     do_write(length);
                                 }
                             });
@@ -31,7 +38,14 @@ void session::do_write(std::size_t length)
                                  {
                                      do_read();
                                  }
+                                 std::cout << "Connected loos" << std::endl;
                              });
+}
+
+server::server(boost::asio::io_context &io_context, short port = 80)
+        : acceptor_(io_context, tcp::endpoint(tcp::v4(), port))
+{
+    do_accept();
 }
 
 void server::do_accept()
@@ -47,3 +61,4 @@ void server::do_accept()
                 do_accept();
             });
 }
+
