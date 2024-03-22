@@ -10,16 +10,26 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="async_server" targetName="executor_test" />
+      <config projectName="async_server" targetName="lib_server" />
+      <config projectName="async_server" targetName="client" />
+      <config projectName="async_server" targetName="lib_client" />
+      <config projectName="async_server" targetName="server" />
+    </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13ebad3e-72e2-4094-9314-59c65fe501c5" name="Changes" comment="updated struct of tests files">
+    <list default="true" id="13ebad3e-72e2-4094-9314-59c65fe501c5" name="Changes" comment="For test pull request">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/async_server/async_tcp_echo_server.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/async_server/async_tcp_echo_server.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/async_server/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/async_server/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,27 +87,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ File.async_tcp_echo_server.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ File.blocking_tcp_echo_client.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Debug.async_server.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/user/CLionProjects/assing-in-out&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.async_tcp_echo_server.cpp.executor": "Run",
+    "C/C++ File.blocking_tcp_echo_client.cpp.executor": "Run",
+    "C/C++ File.main.cpp (1).executor": "Debug",
+    "C/C++ File.main.cpp.executor": "Run",
+    "CMake Debug.async_server.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "ctest.advertisement.all.test.configuration.is.created": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "/home/user/CLionProjects/assing-in-out/src/async_server/main.cpp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/async_client/src" />
@@ -106,6 +120,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Debug.async_server">
+    <configuration name="executor_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="async_server" TARGET_NAME="executor_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="async_server" RUN_TARGET_NAME="executor_test" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="async_server" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -114,30 +134,44 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="async_tcp_echo_server.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assing-in-out" TARGET_NAME="async_tcp_echo_server.cpp" CONFIG_NAME="async_tcp_echo_server.cpp">
-      <option name="sourceFile" value="src/async_client/async_tcp_echo_server.cpp" />
+    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="async_server" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="async_server" RUN_TARGET_NAME="client">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="blocking_tcp_echo_client.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assing-in-out" TARGET_NAME="blocking_tcp_echo_client.cpp" CONFIG_NAME="blocking_tcp_echo_client.cpp">
-      <option name="sourceFile" value="src/async_server/blocking_tcp_echo_client.cpp" />
+    <configuration name="lib_client" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="async_server" TARGET_NAME="lib_client" CONFIG_NAME="Debug">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lib_server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="async_server" TARGET_NAME="lib_server" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="async_server" TARGET_NAME="server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="async_server" RUN_TARGET_NAME="server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="C/C++ File.async_tcp_echo_server.cpp" />
-      <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
+      <item itemvalue="CMake Application.client" />
+      <item itemvalue="CMake Application.lib_client" />
+      <item itemvalue="CMake Application.lib_server" />
+      <item itemvalue="CMake Application.server" />
       <item itemvalue="CMake Debug.async_server" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="Google Test.executor_test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="CMake Debug.async_server" />
-        <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
-        <item itemvalue="C/C++ File.async_tcp_echo_server.cpp" />
-        <item itemvalue="CMake Debug.async_server" />
-        <item itemvalue="C/C++ File.blocking_tcp_echo_client.cpp" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +188,7 @@
       <workItem from="1710412381231" duration="588000" />
       <workItem from="1710501137448" duration="190000" />
       <workItem from="1710501347929" duration="2453000" />
-      <workItem from="1711092147077" duration="5059000" />
+      <workItem from="1711092147077" duration="10797000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -292,7 +326,47 @@
       <option name="project" value="LOCAL" />
       <updated>1711097206225</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add .idea for ignored files">
+      <option name="closed" value="true" />
+      <created>1711097355322</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711097355322</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add .idea for ignored files">
+      <option name="closed" value="true" />
+      <created>1711097374341</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711097374341</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add .idea for ignored files">
+      <option name="closed" value="true" />
+      <created>1711097586010</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711097586010</updated>
+    </task>
+    <task id="LOCAL-00021" summary="For test pull request">
+      <option name="closed" value="true" />
+      <created>1711097912111</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1711097912111</updated>
+    </task>
+    <task id="LOCAL-00022" summary="For test pull request">
+      <option name="closed" value="true" />
+      <created>1711098379668</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1711098379668</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +402,8 @@
     <MESSAGE value="updated struct of server files" />
     <MESSAGE value="updated struct of client files" />
     <MESSAGE value="updated struct of tests files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated struct of tests files" />
+    <MESSAGE value="Add .idea for ignored files" />
+    <MESSAGE value="For test pull request" />
+    <option name="LAST_COMMIT_MESSAGE" value="For test pull request" />
   </component>
 </project>
