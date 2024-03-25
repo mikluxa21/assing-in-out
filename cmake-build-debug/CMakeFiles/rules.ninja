@@ -100,7 +100,7 @@ rule CXX_EXECUTABLE_LINKER__executor_test_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /opt/CLion/CLion-2023.3.4/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/user/CLionProjects/assing-in-out -B/home/user/CLionProjects/assing-in-out/cmake-build-debug
+  command = /opt/CLion-2023.3.4/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/mikluxa/CLionProjects/assing-in-out -B/home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -109,7 +109,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /opt/CLion/CLion-2023.3.4/clion-2023.3.4/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
+  command = /opt/CLion-2023.3.4/clion-2023.3.4/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -117,6 +117,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /opt/CLion/CLion-2023.3.4/clion-2023.3.4/bin/ninja/linux/x64/ninja -t targets
+  command = /opt/CLion-2023.3.4/clion-2023.3.4/bin/ninja/linux/x64/ninja -t targets
   description = All primary targets available:
 

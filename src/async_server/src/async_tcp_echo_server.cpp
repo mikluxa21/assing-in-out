@@ -11,13 +11,13 @@ void session::start()
 void session::do_read()
 {
     auto self(shared_from_this());
-    socket_.async_read_some(boost::asio::buffer(data_, max_length),
+    socket_.async_read_some(boost::asio::buffer(m_data, max_length),
                             [this, self](boost::system::error_code ec, std::size_t length)
                             {
                                 if (!ec)
                                 {
                                     std::cout << "Server: ";
-                                    for(auto i: data_)
+                                    for(auto i: m_data)
                                         if(i != 0)
                                             std::cout << i;
                                         else
@@ -31,7 +31,7 @@ void session::do_read()
 void session::do_write(std::size_t length)
 {
     auto self(shared_from_this());
-    boost::asio::async_write(socket_, boost::asio::buffer(data_, length),
+    boost::asio::async_write(socket_, boost::asio::buffer(m_data, length),
                              [this, self](boost::system::error_code ec, std::size_t /*length*/)
                              {
                                  if (!ec)
