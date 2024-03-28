@@ -3,6 +3,10 @@
 //
 #include "async_server/async_tcp_echo_server.h"
 
+session::session(tcp::socket socket)
+        : socket_(std::move(socket))
+{}
+
 void session::start()
 {
     do_read();
@@ -11,11 +15,18 @@ void session::start()
 void session::do_read()
 {
     auto self(shared_from_this());
-    socket_.async_read_some(boost::asio::buffer(data_, max_length),
+    socket_.async_read_some(boost::asio::buffer(m_data, max_length),
                             [this, self](boost::system::error_code ec, std::size_t length)
                             {
                                 if (!ec)
                                 {
+                                    std::cout << "Server: ";
+                                    for(auto i: m_data)
+                                        if(i != 0)
+                                            std::cout << i;
+                                        else
+                                            break;
+                                    std::cout << std::endl;
                                     do_write(length);
                                 }
                             });
@@ -24,7 +35,7 @@ void session::do_read()
 void session::do_write(std::size_t length)
 {
     auto self(shared_from_this());
-    boost::asio::async_write(socket_, boost::asio::buffer(data_, length),
+    boost::asio::async_write(socket_, boost::asio::buffer(m_data, length),
                              [this, self](boost::system::error_code ec, std::size_t /*length*/)
                              {
                                  if (!ec)
@@ -32,6 +43,12 @@ void session::do_write(std::size_t length)
                                      do_read();
                                  }
                              });
+}
+
+server::server(boost::asio::io_context &io_context, short port = 80)
+        : acceptor_(io_context, tcp::endpoint(tcp::v4(), port))
+{
+    do_accept();
 }
 
 void server::do_accept()
@@ -47,3 +64,4 @@ void server::do_accept()
                 do_accept();
             });
 }
+
