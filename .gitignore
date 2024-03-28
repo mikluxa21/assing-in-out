@@ -3,11 +3,4 @@
 /.idea
 /.idea/*/
 .idea/workspace.xml
-cmake-build-debug/src/async_server/server
-cmake-build-debug/src/async_client/client
-cmake-build-debug/src
-cmake-build-debug/src/**/
-cmake-build-debug/test
-cmake-build-debug/test/**/
-cmake-build-debug/Testing/Temporary/LastTest.log
-cmake-build-debug/.cmake/api/v1/reply/**/
+cmake-build-debug/**/
