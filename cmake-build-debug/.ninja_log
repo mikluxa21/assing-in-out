@@ -1,7 +1,0 @@
-# ninja log v5
-0	2426	1711103140072794434	src/async_client/CMakeFiles/lib_client.dir/src/blocking_tcp_echo_client.cpp.o	2cc77d1fbc70a47f
-1	3583	1711103141224815795	src/async_client/CMakeFiles/client.dir/main.cpp.o	4af9898e8e3f0790
-3583	3824	1711103141480820541	src/async_client/client	8e43594165f18364
-0	3351	1711103313731946852	src/async_server/CMakeFiles/server.dir/main.cpp.o	5c4961bf783cac0d
-0	3529	1711103313919950199	src/async_server/CMakeFiles/lib_server.dir/src/async_tcp_echo_server.cpp.o	3344fb05c2b46eff
-3529	3756	1711103314147954258	src/async_server/server	86a7583b004c3149
