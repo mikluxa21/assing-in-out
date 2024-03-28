@@ -1,4 +1,4 @@
-/opt/CLion-2023.3.4/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/opt/CLion-2023.3.4/clion-2023.3.4/bin/ninja/linux/x64/ninja -G Ninja -S /home/mikluxa/CLionProjects/assing-in-out -B /home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug
+/opt/CLion/CLion-2023.3.4/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -S /home/user/CLionProjects/assing-in-out -B /home/user/CLionProjects/assing-in-out/cmake-build-debug
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -13,6 +13,6 @@
 -- Detecting CXX compile features - done
 -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.58.0") found components: program_options 
 -- Found GTest: /usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.11.0")  
--- Configuring done (2.2s)
--- Generating done (0.0s)
--- Build files have been written to: /home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug
+-- Configuring done (3.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/user/CLionProjects/assing-in-out/cmake-build-debug
