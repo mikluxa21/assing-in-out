@@ -19,6 +19,6 @@ target_link_libraries(${TEST_NAME}
         gtest
         gtest_main
         pthread
-        #lib_client
-        #lib_server
+        lib_client
+        lib_server
 )
