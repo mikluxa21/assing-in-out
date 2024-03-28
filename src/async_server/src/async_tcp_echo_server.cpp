@@ -3,6 +3,10 @@
 //
 #include "async_server/async_tcp_echo_server.h"
 
+session::session(tcp::socket socket)
+        : socket_(std::move(socket))
+{}
+
 void session::start()
 {
     do_read();
@@ -38,7 +42,6 @@ void session::do_write(std::size_t length)
                                  {
                                      do_read();
                                  }
-                                 std::cout << "Connected loos" << std::endl;
                              });
 }
 
