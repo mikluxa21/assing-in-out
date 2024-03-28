@@ -10,3 +10,4 @@ cmake-build-debug/src/**/
 cmake-build-debug/test
 cmake-build-debug/test/**/
 cmake-build-debug/Testing/Temporary/LastTest.log
+cmake-build-debug/.cmake/api/v1/reply/**/
