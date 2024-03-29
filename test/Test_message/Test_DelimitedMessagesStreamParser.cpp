@@ -1,4 +1,4 @@
-#include <protobuf_parser/DelimitedMessagesStreamParser.hpp>
+#include "protobuf/parser/DelimitedMessagesStreamParser.h"
 #include "src/protobuf/message.pb.h"
 #include <gtest/gtest.h>
 
