@@ -8,8 +8,10 @@ find_package(GTest REQUIRED)
 set(TEST_NAME executor_test)
 
 add_executable(${TEST_NAME}
-        Test_async_tcp_echo_server.cpp
-        Test_blocking_tcp_echo_client.cpp
+        #Test_server/Test_async_tcp_echo_server.cpp
+        #Test_client/Test_blocking_tcp_echo_client.cpp
+        Test_message/Test_DelimitedMessagesStreamParser.cpp
+        Test_message/Test_Parser.cpp
 )
 add_test(NAME ${TEST_NAME}
         COMMAND ${TEST_NAME}
@@ -21,4 +23,5 @@ target_link_libraries(${TEST_NAME}
         pthread
         lib_client
         lib_server
+        lib_protobuf
 )
