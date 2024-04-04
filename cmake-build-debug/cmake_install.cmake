@@ -64,6 +64,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/parallel_executor/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/test/cmake_install.cmake")
 endif()
 

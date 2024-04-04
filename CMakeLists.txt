@@ -14,5 +14,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/parallel_executor)
+
 enable_testing()
 add_subdirectory(test)

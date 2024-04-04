@@ -205,6 +205,32 @@ lib_protobuf/fast:
 .PHONY : lib_protobuf/fast
 
 #=============================================================================
+# Target rules for targets named parall_lib
+
+# Build rule for target.
+parall_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parall_lib
+.PHONY : parall_lib
+
+# fast build rule for target.
+parall_lib/fast:
+	$(MAKE) $(MAKESILENT) -f src/parallel_executor/CMakeFiles/parall_lib.dir/build.make src/parallel_executor/CMakeFiles/parall_lib.dir/build
+.PHONY : parall_lib/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f src/parallel_executor/CMakeFiles/main.dir/build.make src/parallel_executor/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
 # Target rules for targets named executor_test
 
 # Build rule for target.
@@ -232,6 +258,8 @@ help:
 	@echo "... lib_proto"
 	@echo "... lib_protobuf"
 	@echo "... lib_server"
+	@echo "... main"
+	@echo "... parall_lib"
 	@echo "... server"
 .PHONY : help
 
