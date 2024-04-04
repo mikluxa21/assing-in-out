@@ -2,29 +2,11 @@ set(
 		PROJECT_NAME parallel_executor
 )
 set(HDRS
-	Device.h
-	DeviceA.h
-	DeviceB.h
-	DeviceEvent.h
-	Parser.h
-	StartedEvent.h
-	WorkDoneEvent.h
-	DataEvent.h
-	Event.h
-	EventQueue.h
+		Device.h
+		DeviceClient.h
         )
 
 set(SRCS
-	src/Device.cpp
-	src/DeviceA.cpp
-	src/DeviceB.cpp
-	src/DeviceEvent.cpp
-	src/Parser.cpp
-	src/StartedEvent.cpp
-	src/WorkDoneEvent.cpp
-	src/DataEvent.cpp
-	src/Event.cpp
-	src/EventQueue.cpp
          )
 
 set(

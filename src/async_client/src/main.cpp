@@ -5,12 +5,9 @@
 
 int main(int argc, char* argv[])
 {
-    if (argc != 3)
-    {
-        std::cerr << "Usage: blocking_tcp_echo_client <host> <port>\n";
-        return 1;
-    }
     auto* client = new Client();
+    std::string message = "Hello world";
+    std::cout << client->sendMessage(message);
     delete client;
     return 0;
 }

@@ -1,26 +1,14 @@
-#ifndef DEVICE_H
-#define DEVICE_H
+//
+// Created by user on 04.04.24.
+//
 
-#include <string>
+#ifndef ASYNC_DEVICE_H
+#define ASYNC_DEVICE_H
 
 class Device
 {
 public:
-  virtual ~Device() {}
-
-  /*!
-   * \brief Возвращает имя, соответствующее устройству.
-   *
-   * \return Строка. Имя устройства.
-  */
-  virtual std::string getName() = 0;
-
-  /*!
-   * \brief Симулирует чтение данных.
-   *
-   * \return Строка. Прочитанные данные.
-  */
-  virtual std::string getDataAsString() = 0;
+    virtual ~Device() = 0;
+    virtual void inWork() = 0;
 };
-
-#endif
+#endif //ASYNC_DEVICE_H
