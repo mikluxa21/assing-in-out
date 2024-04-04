@@ -2,10 +2,10 @@
 // Created by user on 29.03.24.
 //
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
-
-template<class MessageType>
+//I don't understand why it method don't work
+/*template<class MessageType>
 std::list<typename DelimitedMessagesStreamParser<MessageType>::PointerToConstValue>
-DelimitedMessagesStreamParser<MessageType>::parse(const std::string& data)
+        DelimitedMessagesStreamParser<MessageType>::parse(const std::string& data)
 {
     std::list<PointerToConstValue> result;
     this->m_buffer.insert(this->m_buffer.end(), data.begin(), data.end());
@@ -26,4 +26,4 @@ DelimitedMessagesStreamParser<MessageType>::parse(const std::string& data)
         break;
     }
     return result;
-}
+}*/
