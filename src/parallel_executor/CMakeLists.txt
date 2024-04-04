@@ -1,4 +1,7 @@
-set(HDRS 
+set(
+		PROJECT_NAME parallel_executor
+)
+set(HDRS
 	Device.h
 	DeviceA.h
 	DeviceB.h
@@ -24,13 +27,16 @@ set(SRCS
 	src/EventQueue.cpp
          )
 
-add_library(parall_lib OBJECT ${SRCS} ${HDRS})
+set(
+		LIB_NAME parall_lib
+)
+add_library(${LIB_NAME} OBJECT ${SRCS} ${HDRS})
 
 find_package(Boost 1.58.0 COMPONENTS filesystem program_options)
 
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    add_executable(main src/main.cpp)
-    target_link_libraries(main ${Boost_LIBRARIES})
+    add_executable(${PROJECT_NAME} src/main.cpp)
+    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 endif()
-target_link_libraries(main parall_lib)
+target_link_libraries(${PROJECT_NAME} ${LIB_NAME})
