@@ -24,7 +24,7 @@ Client::Client(std::string host, std::string port)
     }
 }
 
-std::string Client::sendMessage(std::string& message) {
+std::string Client::sendMessage(std::string message) {
     char reply[max_length];
     size_t reply_length;
     try{

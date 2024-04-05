@@ -5,9 +5,8 @@
 
 int main(int argc, char* argv[])
 {
-    auto* client = new Client();
+    auto client =  Client("127.0.0.1", "8080");
     std::string message = "Hello world";
-    std::cout << client->sendMessage(message);
-    delete client;
+    std::cout << client.sendMessage(message);
     return 0;
 }
