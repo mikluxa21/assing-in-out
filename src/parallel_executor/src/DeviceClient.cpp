@@ -4,19 +4,21 @@
 #include "parallel_executor/DeviceClient.h"
 
 DeviceClient::DeviceClient()
-    : m_client(Client(m_host, m_port)), m_name(std::move(this->m_client.sendMessage(m_getId)))
-{}
+{
+    this->m_client =new Client(this->m_host, this->m_port);
+    this->m_name = this->m_client->sendMessage(m_getId);
+}
 
 void DeviceClient::inWork(size_t countMessages) {
-    for(auto i  = 0; i < countMessages; i++)
+    for(size_t i  = 0; i < countMessages; i++)
     {
-        std::string retValue = this->m_client.sendMessage(m_inWork);
+        auto retValue = this->m_client->sendMessage(m_inWork);
         //if() ->Check return value
     }
 }
 
 DeviceClient::~DeviceClient() {
-    std::string retValue = this->m_client.sendMessage(m_stop);
+    auto retValue = this->m_client->sendMessage(m_stop);
     //if() ->Check return value
 }
 
