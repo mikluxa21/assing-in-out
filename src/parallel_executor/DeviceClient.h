@@ -15,15 +15,18 @@
 class DeviceClient: public Device
 {
 public:
-    DeviceClient(size_t);
-    void inWork() override;
+    DeviceClient();
+    void inWork(size_t) override;
     ~DeviceClient() override;
 
 private:
     std::string m_name;
-    std::unique_ptr<Client*> m_client;
+    Client m_client;
     std::string m_host = "127.0.0.1";
     std::string m_port = "8080";
+    std::string m_getId = "GetId";
+    std::string m_inWork = "Work";
+    std::string m_stop = "Stop";
 
 };
 #endif //ASYNC_DEVICECLIENT_H
