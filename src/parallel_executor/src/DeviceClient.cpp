@@ -7,6 +7,7 @@ DeviceClient::DeviceClient()
 {
     this->m_client =new Client(this->m_host, this->m_port);
     this->m_name = this->m_client->sendMessage(m_getId);
+    std::cout << this->m_name;
 }
 
 void DeviceClient::inWork(size_t countMessages) {

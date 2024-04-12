@@ -9,6 +9,8 @@
 #include <memory>
 
 #include "async_client/blocking_tcp_echo_client.h"
+#include "protobuf/parser/DelimitedMessagesStreamParser.h"
+#include "protobuf/parser/Parser.h"
 
 
 class DeviceClient
