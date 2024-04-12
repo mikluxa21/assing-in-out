@@ -21,4 +21,5 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
 		${LIB_NAME}
 		lib_client
+		lib_protobuf
 )
