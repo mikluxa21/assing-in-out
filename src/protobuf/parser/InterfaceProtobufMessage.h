@@ -7,7 +7,7 @@
 
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
 #include "protobuf/parser/Parser.h"
-#include "protobuf/protobuf/message.pb.h"
+#include "src/protobuf/protobuf/message.pb.h"
 
 #include <string>
 #include <map>
