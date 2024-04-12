@@ -10,11 +10,11 @@ message WrapperMessage {
 }
 
 message FastResponse {
-	required string current_date_time = 1;
+	required string message_data = 1;
 }
 
 message SlowResponse {
-	required uint32 connected_client_count = 1;
+	required uint32 client_id = 1;
 }
 
 message RequestForFastResponse {
@@ -22,5 +22,5 @@ message RequestForFastResponse {
 }
 
 message RequestForSlowResponse {
-	required uint32 time_in_seconds_to_sleep = 1;
+	required uint32 optional_data = 1;
 }

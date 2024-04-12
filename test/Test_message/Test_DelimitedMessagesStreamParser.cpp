@@ -1,5 +1,5 @@
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
-#include "src/protobuf/message.pb.h"
+#include "src/protobuf/protobuf/message.pb.h"
 #include <gtest/gtest.h>
 
 
@@ -47,7 +47,7 @@ TEST(Parser, OneSlowRequest)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_request_for_slow_response()->set_time_in_seconds_to_sleep(0);
+  message.mutable_request_for_slow_response()->set_optional_data(0);
 
   auto data = serializeDelimited(message);
   messages = parser.parse(std::string(data->begin(), data->end()));
@@ -56,8 +56,8 @@ TEST(Parser, OneSlowRequest)
   auto item = messages.front();
   ASSERT_TRUE(item->has_request_for_slow_response());
   EXPECT_EQ(
-    item->request_for_slow_response().time_in_seconds_to_sleep(),
-    message.request_for_slow_response().time_in_seconds_to_sleep()
+    item->request_for_slow_response().optional_data(),
+    message.request_for_slow_response().optional_data()
   );
 }
 
@@ -67,7 +67,7 @@ TEST(Parser, SomeSlowRequests)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_request_for_slow_response()->set_time_in_seconds_to_sleep(0);
+  message.mutable_request_for_slow_response()->set_optional_data(0);
 
   auto data = serializeDelimited(message);
 
@@ -83,8 +83,8 @@ TEST(Parser, SomeSlowRequests)
   {
     ASSERT_TRUE(item->has_request_for_slow_response());
     EXPECT_EQ(
-      item->request_for_slow_response().time_in_seconds_to_sleep(),
-      message.request_for_slow_response().time_in_seconds_to_sleep()
+      item->request_for_slow_response().optional_data(),
+      message.request_for_slow_response().optional_data()
     );
   }
 }
@@ -98,7 +98,7 @@ TEST(Parser, SomeRequests)
   fastRequest.mutable_request_for_fast_response();
 
   TestTask::Messages::WrapperMessage slowRequest;
-  slowRequest.mutable_request_for_slow_response()->set_time_in_seconds_to_sleep(0);
+  slowRequest.mutable_request_for_slow_response()->set_optional_data(0);
 
   auto fReqData = serializeDelimited(fastRequest);
   auto sReqData = serializeDelimited(slowRequest);
@@ -117,8 +117,8 @@ TEST(Parser, SomeRequests)
     if (item->has_request_for_slow_response())
     {
       EXPECT_EQ(
-        item->request_for_slow_response().time_in_seconds_to_sleep(),
-        slowRequest.request_for_slow_response().time_in_seconds_to_sleep()
+        item->request_for_slow_response().optional_data(),
+        slowRequest.request_for_slow_response().optional_data()
       );
     }
   }
@@ -130,7 +130,7 @@ TEST(Parser, OneFastResponse)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_fast_response()->set_current_date_time("");
+  message.mutable_fast_response()->set_message_data("");
 
   auto data = serializeDelimited(message);
   messages = parser.parse(std::string(data->begin(), data->end()));
@@ -139,8 +139,8 @@ TEST(Parser, OneFastResponse)
   auto item = messages.front();
   ASSERT_TRUE(item->has_fast_response());
   EXPECT_EQ(
-    item->fast_response().current_date_time(),
-    message.fast_response().current_date_time()
+    item->fast_response().message_data(),
+    message.fast_response().message_data()
   );
 }
 
@@ -150,7 +150,7 @@ TEST(Parser, SomeFastResponses)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_fast_response()->set_current_date_time("");
+  message.mutable_fast_response()->set_message_data("");
 
   auto data = serializeDelimited(message);
 
@@ -166,8 +166,8 @@ TEST(Parser, SomeFastResponses)
   {
     ASSERT_TRUE(item->has_fast_response());
     EXPECT_EQ(
-      item->fast_response().current_date_time(),
-      message.fast_response().current_date_time()
+      item->fast_response().message_data(),
+      message.fast_response().message_data()
     );
   }
 }
@@ -178,7 +178,7 @@ TEST(Parser, OneSlowResponse)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_slow_response()->set_connected_client_count(0);
+  message.mutable_slow_response()->set_client_id(0);
 
   auto data = serializeDelimited(message);
   messages = parser.parse(std::string(data->begin(), data->end()));
@@ -187,8 +187,8 @@ TEST(Parser, OneSlowResponse)
   auto item = messages.front();
   ASSERT_TRUE(item->has_slow_response());
   EXPECT_EQ(
-    item->slow_response().connected_client_count(),
-    message.slow_response().connected_client_count()
+    item->slow_response().client_id(),
+    message.slow_response().client_id()
   );
 }
 
@@ -198,7 +198,7 @@ TEST(Parser, SomeSlowResponses)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_slow_response()->set_connected_client_count(0);
+  message.mutable_slow_response()->set_client_id(0);
 
   auto data = serializeDelimited(message);
 
@@ -214,8 +214,8 @@ TEST(Parser, SomeSlowResponses)
   {
     ASSERT_TRUE(item->has_slow_response());
     EXPECT_EQ(
-      item->slow_response().connected_client_count(),
-      message.slow_response().connected_client_count()
+      item->slow_response().client_id(),
+      message.slow_response().client_id()
     );
   }
 }
@@ -226,10 +226,10 @@ TEST(Parser, SomeResponses)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage fastResponse;
-  fastResponse.mutable_fast_response()->set_current_date_time("");
+  fastResponse.mutable_fast_response()->set_message_data("");
 
   TestTask::Messages::WrapperMessage slowResponse;
-  slowResponse.mutable_slow_response()->set_connected_client_count(0);
+  slowResponse.mutable_slow_response()->set_client_id(0);
 
   auto fResData = serializeDelimited(fastResponse);
   auto sResData = serializeDelimited(slowResponse);
@@ -251,15 +251,15 @@ TEST(Parser, SomeResponses)
     if (item->has_fast_response())
     {
       EXPECT_EQ(
-        item->fast_response().current_date_time(),
-        fastResponse.fast_response().current_date_time()
+        item->fast_response().message_data(),
+        fastResponse.fast_response().message_data()
       );
     }
     else
     {
       EXPECT_EQ(
-        item->slow_response().connected_client_count(),
-        slowResponse.slow_response().connected_client_count()
+        item->slow_response().client_id(),
+        slowResponse.slow_response().client_id()
       );
     }
   }
@@ -307,7 +307,7 @@ TEST(Parser, CorruptedData)
   DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
 
   TestTask::Messages::WrapperMessage message;
-  message.mutable_fast_response()->set_current_date_time("0");
+  message.mutable_fast_response()->set_message_data("0");
 
   auto data = serializeDelimited(message);
 

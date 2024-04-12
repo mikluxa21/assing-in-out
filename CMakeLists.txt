@@ -10,9 +10,10 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_server)
 
 find_package(Protobuf REQUIRED)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/protobuf)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/parallel_executor)
 
