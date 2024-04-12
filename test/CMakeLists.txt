@@ -24,7 +24,7 @@ target_link_libraries(${TEST_NAME}
         pthread
         lib_client
         lib_server
-        lib_protobuf
+        lib_parser
         lib_proto
         ${Protobuf_LIBRARIES}
         parall_lib
