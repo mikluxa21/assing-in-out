@@ -5,12 +5,13 @@
 #ifndef DEVICECLIENT_H
 #define DEVICECLIENT_H
 
-#include <string>
-#include <memory>
-
 #include "async_client/blocking_tcp_echo_client.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
 #include "protobuf/parser/Parser.h"
+#include "src/protobuf/protobuf/message.pb.h"
+
+#include <string>
+#include <memory>
 
 
 class DeviceClient
