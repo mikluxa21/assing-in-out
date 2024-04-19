@@ -23,7 +23,6 @@ public:
 
 private:
     TestTask::Messages::WrapperMessage m_message;
-
 };
 
 
