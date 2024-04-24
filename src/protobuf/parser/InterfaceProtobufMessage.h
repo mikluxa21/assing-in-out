@@ -21,6 +21,8 @@ public:
 
     std::map<std::string, std::string> ParseMessage(std::string);
 
+    TestTask::Messages::WrapperMessage& GetMessage();
+
 private:
     TestTask::Messages::WrapperMessage m_message;
 };

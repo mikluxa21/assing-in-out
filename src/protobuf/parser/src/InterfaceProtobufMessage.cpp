@@ -28,19 +28,22 @@ std::string InterfaceProtobufMessage::CreateMessage(std::string message) {
 
 std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::string message) {
     DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
-    std::map<std::string, std::string> resultMap;
-    auto parseRes = *parser.parse(message).begin();
+    std::map<std::string, std::string> resultMap
+            {
+        {"request_for_fast_response", ""},
+        {"message_data", ""},
+        {"client_id", ""}
+            };
+    auto parseRes = parser.parse(message).front();
     if(parseRes->has_request_for_fast_response())
-        resultMap["request_for_fast_response"] = "";
-    else
-        resultMap["request_for_fast_response"] = nullptr;
+        resultMap["request_for_fast_response"] = "1";
     if(parseRes->has_fast_response())
         resultMap["message_data"] = parseRes->fast_response().message_data();
-    else
-        resultMap["message_data"] = nullptr;
     if(parseRes->has_slow_response())
-        resultMap["client_id"] = parseRes->slow_response().client_id();
-    else
-        resultMap["client_id"] = nullptr;
+        resultMap["client_id"] = std::to_string(parseRes->slow_response().client_id());
     return resultMap;
+}
+
+TestTask::Messages::WrapperMessage& InterfaceProtobufMessage::GetMessage() {
+    return this->m_message;
 }
