@@ -12,6 +12,7 @@ add_executable(${TEST_NAME}
         #Test_client/Test_blocking_tcp_echo_client.cpp
         Test_message/Test_DelimitedMessagesStreamParser.cpp
         Test_message/Test_Parser.cpp
+        Test_message/Test_InterfaceProtobufMessage.cpp
         #Test_parallel/Test_DeviceClient.cpp
 )
 add_test(NAME ${TEST_NAME}
