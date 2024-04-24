@@ -1,4 +1,4 @@
-#include "parallel_executor/DeviceClient.h"
+#include "devices/DeviceClient.h"
 
 DeviceClient::DeviceClient()
 {
