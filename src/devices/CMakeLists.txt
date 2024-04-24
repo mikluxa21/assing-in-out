@@ -3,14 +3,16 @@ set(
 )
 set(HDRS
 		DeviceClient.h
+		DeviceServer.h
         )
 
 set(SRCS
-        src/DeviceClient.cpp
-         )
+		src/DeviceClient.cpp
+		src/DeviceServer.cpp
+)
 
 set(
-		LIB_NAME parall_lib
+		LIB_NAME devices
 )
 add_library(${LIB_NAME}
 		OBJECT ${SRCS} ${HDRS}

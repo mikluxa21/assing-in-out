@@ -28,5 +28,5 @@ target_link_libraries(${TEST_NAME}
         lib_parser
         lib_proto
         ${Protobuf_LIBRARIES}
-        parall_lib
+        devices
 )
