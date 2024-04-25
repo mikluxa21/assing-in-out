@@ -30,9 +30,9 @@ std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::s
     DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
     std::map<std::string, std::string> resultMap
             {
-        {"request_for_fast_response", ""},
-        {"message_data", ""},
-        {"client_id", ""}
+                    {"request_for_fast_response", ""},
+                    {"message_data", ""},
+                    {"client_id", ""}
             };
     auto parseRes = parser.parse(message).front();
     if(parseRes->has_request_for_fast_response())

@@ -7,8 +7,7 @@
 
 #include "async_client/blocking_tcp_echo_client.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
-#include "protobuf/parser/Parser.h"
-#include "src/protobuf/protobuf/message.pb.h"
+#include "protobuf/parser/InterfaceProtobufMessage.h"
 
 #include <string>
 #include <memory>
@@ -29,6 +28,6 @@ private:
     std::string m_getId = "GetId";
     std::string m_inWork = "Work";
     std::string m_stop = "Stop";
-
+    InterfaceProtobufMessage m_interfaceProtobufMessage;
 };
 #endif //DEVICECLIENT_H

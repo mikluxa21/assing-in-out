@@ -24,9 +24,17 @@ TEST(InterfaceProtobufMessage, EmptyCreateTest)
 TEST(InterfaceProtobufMessage, IntCreateTest)
 {
     int digit = 10;
+
+    TestTask::Messages::WrapperMessage message;
+    message.mutable_request_for_fast_response();
+    message.mutable_slow_response()->set_client_id(digit);
+    auto rightMess =  serializeDelimited(message);
+
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto res = interfaceProtobufMessage.CreateMessage(digit);
-    ASSERT_EQ(res.size(), 6);
+
+    ASSERT_EQ(res.size(), std::string(rightMess->data()).size());
+    ASSERT_EQ(res, std::string (rightMess->data()));
 }
 
 TEST(InterfaceProtobufMessage, StringCreateTest)
@@ -96,4 +104,15 @@ TEST(InterfaceProtobufMessage, ParseMessageEmtyTest)
     ASSERT_EQ(res["request_for_fast_response"], "");
     ASSERT_EQ(res["message_data"], "");
     ASSERT_EQ(res["client_id"], "");
+}
+
+TEST(InterfaceProtobufMessage, ComplexIntagrationTest)
+{
+    int digit = 10;
+    InterfaceProtobufMessage interfaceProtobufMessage;
+    auto digitMessage = interfaceProtobufMessage.CreateMessage(digit);
+    auto resParsing = interfaceProtobufMessage.ParseMessage(std::string(digitMessage));
+    auto returnDigit = atoi(resParsing["client_id"].c_str());
+    ASSERT_EQ(digit, returnDigit);
+
 }

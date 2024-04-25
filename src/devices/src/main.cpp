@@ -3,7 +3,7 @@
 //
 
 
-#include "parallel_executor/DeviceClient.h"
+#include "devices/DeviceClient.h"
 
 
 int main()

@@ -9,11 +9,11 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/protobuf)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
-
 include_directories(${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_client)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_server)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/devices)
 
