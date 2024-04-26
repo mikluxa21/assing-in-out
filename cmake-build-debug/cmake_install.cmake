@@ -1,4 +1,4 @@
-# Install script for directory: /home/mikluxa/CLionProjects/assing-in-out
+# Install script for directory: /home/user/CLionProjects/assing-in-out
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,17 +44,32 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug/src/async_client/cmake_install.cmake")
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/async_client/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug/src/async_server/cmake_install.cmake")
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/async_server/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug/test/cmake_install.cmake")
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/protobuf/protobuf/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/protobuf/parser/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/src/parallel_executor/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/user/CLionProjects/assing-in-out/cmake-build-debug/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +80,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mikluxa/CLionProjects/assing-in-out/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/user/CLionProjects/assing-in-out/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
