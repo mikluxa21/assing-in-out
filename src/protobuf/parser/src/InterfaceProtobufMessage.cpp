@@ -34,10 +34,10 @@ std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::s
                     {"message_data", ""},
                     {"client_id", ""}
             };
-    auto parse = parser.parse(std::string(message.begin(), message.end()));
+    auto parse = parser.parse(message);
 
     if(parse.empty())
-        throw std::runtime_error("Error in the parsing");
+        throw std::runtime_error("InterfaceProtobufMessage::ParseMessage: Error in the parsing");
 
     auto parseRes = parse.front();
     if(parseRes->has_request_for_fast_response())
