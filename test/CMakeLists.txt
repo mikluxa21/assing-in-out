@@ -15,6 +15,7 @@ add_executable(${TEST_NAME}
         Test_message/Test_InterfaceProtobufMessage.cpp
         Test_server/Test_ServerMessages.cpp
         Test_server/Test_ServerMessages.cpp
+        Test_devices/Test_DeviceClient.cpp
         #Test_parallel/Test_DeviceClient.cpp
 )
 add_test(NAME ${TEST_NAME}
