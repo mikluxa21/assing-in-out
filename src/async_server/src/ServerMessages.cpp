@@ -8,11 +8,11 @@ ServerMessages::ServerMessages() {
     this->m_counterClients = 1;
 }
 
-std::string ServerMessages::GetServerQueshion(const std::string& message) {
+std::string ServerMessages::GetServerQueshion(std::string& message) {
     std::string result;
     auto mapValues = this->m_interfaceProtobufMessage.ParseMessage(message);
     if(mapValues.empty())
-        throw std::runtime_error("Error into the geted data");
+        throw std::runtime_error("ServerMessages::GetServerQueshion: Error into the geted data");
     if(mapValues["message_data"] == "GetId" && mapValues["client_id"] == "")
     {
         result = this->m_interfaceProtobufMessage.CreateMessage(this->m_counterClients);
@@ -24,13 +24,9 @@ std::string ServerMessages::GetServerQueshion(const std::string& message) {
         result = this->m_interfaceProtobufMessage.CreateMessage();
         std::cout << "connection lost: " << mapValues["client_id"] << std::endl;
     }
-    else if(mapValues["message_data"] != ""  && mapValues["client_id"] != "")
-    {
-        result = message;
-    }
     else
     {
-        result = this->m_interfaceProtobufMessage.CreateMessage("Error");
+        result = message;
     }
     return result;
 }

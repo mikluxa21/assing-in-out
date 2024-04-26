@@ -12,7 +12,7 @@
 class ServerMessages {
 public:
     ServerMessages();
-    std::string GetServerQueshion(const std::string&);
+    std::string GetServerQueshion(std::string&);
 
 private:
     InterfaceProtobufMessage m_interfaceProtobufMessage;
