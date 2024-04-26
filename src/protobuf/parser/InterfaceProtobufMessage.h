@@ -17,9 +17,9 @@ public:
     InterfaceProtobufMessage();
     std::string CreateMessage();
     std::string CreateMessage(int);
-    std::string CreateMessage(std::string);
+    std::string CreateMessage(const std::string&);
 
-    std::map<std::string, std::string> ParseMessage(std::string);
+    static std::map<std::string, std::string> ParseMessage(std::string&);
 
     TestTask::Messages::WrapperMessage& GetMessage();
 

@@ -11,22 +11,22 @@ InterfaceProtobufMessage::InterfaceProtobufMessage() {
 
 std::string InterfaceProtobufMessage::CreateMessage() {
     auto resMessage = serializeDelimited(this->m_message);
-    return resMessage->data();
+    return std::string(resMessage->begin(), resMessage->end());
 }
 
 std::string InterfaceProtobufMessage::CreateMessage(int message) {
     this->m_message.mutable_slow_response()->set_client_id(message);
     auto resMessage = serializeDelimited(this->m_message);
-    return resMessage->data();
+    return std::string(resMessage->begin(), resMessage->end());
 }
 
-std::string InterfaceProtobufMessage::CreateMessage(std::string message) {
+std::string InterfaceProtobufMessage::CreateMessage(const std::string& message) {
     this->m_message.mutable_fast_response()->set_message_data(message);
     auto resMessage = serializeDelimited(this->m_message);
-    return resMessage->data();
+    return std::string(resMessage->begin(), resMessage->end());
 }
 
-std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::string message) {
+std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::string& message) {
     DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
     std::map<std::string, std::string> resultMap
             {
@@ -34,7 +34,12 @@ std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::s
                     {"message_data", ""},
                     {"client_id", ""}
             };
-    auto parseRes = parser.parse(message).front();
+    auto parse = parser.parse(std::string(message.begin(), message.end()));
+
+    if(parse.empty())
+        throw std::runtime_error("Error in the parsing");
+
+    auto parseRes = parse.front();
     if(parseRes->has_request_for_fast_response())
         resultMap["request_for_fast_response"] = "1";
     if(parseRes->has_fast_response())
