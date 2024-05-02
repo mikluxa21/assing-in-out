@@ -7,13 +7,6 @@
 
 #include <gtest/gtest.h>
 
-TEST(InterfaceProtobufMessage, EmptyTest)
-{
-    InterfaceProtobufMessage interfaceProtobufMessage;
-    auto res = interfaceProtobufMessage.GetMessage();
-    ASSERT_TRUE(res.has_request_for_fast_response());
-}
-
 TEST(InterfaceProtobufMessage, EmptyCreateTest)
 {
     InterfaceProtobufMessage interfaceProtobufMessage;

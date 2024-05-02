@@ -5,9 +5,9 @@
 #ifndef ASYNC_INTERFACEPROTOBUFMESSAGE_H
 #define ASYNC_INTERFACEPROTOBUFMESSAGE_H
 
-#include "protobuf/parser/DelimitedMessagesStreamParser.h"
 #include "protobuf/parser/Parser.h"
 #include "src/protobuf/protobuf/message.pb.h"
+#include "protobuf/parser/DelimitedMessagesStreamParser.h"
 
 #include <string>
 #include <map>
@@ -20,9 +20,6 @@ public:
     std::string CreateMessage(const std::string&);
 
     std::map<std::string, std::string> ParseMessage(std::string&);
-
-    TestTask::Messages::WrapperMessage& GetMessage();
-
 private:
     TestTask::Messages::WrapperMessage m_message;
 };

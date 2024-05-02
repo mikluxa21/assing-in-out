@@ -3,10 +3,12 @@ set(
 )
 set(HDRS
 		DeviceClient.h
+		InterfaceDeviceClient.h
 )
 
 set(SRCS
 		src/DeviceClient.cpp
+		src/InterfaceDeviceClient.cpp
 )
 
 set(

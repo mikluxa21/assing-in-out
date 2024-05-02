@@ -3,12 +3,14 @@
 //
 
 
-#include "devices/DeviceClient.h"
+#include "devices/InterfaceDeviceClient.h"
 
 
 int main()
 {
-    DeviceClient deviceClient;
-    deviceClient.inWork(3);
+    for(size_t i = 0; i < 10; i++) {
+        InterfaceDeviceClient interfaceDeviceClient;
+        interfaceDeviceClient.run(3);
+    }
     return 0;
 }
