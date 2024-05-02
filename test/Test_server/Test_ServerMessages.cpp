@@ -84,12 +84,35 @@ TEST(ServerMessages, StreamAnyConectedTest)
     }
 }
 
-/*TEST(ServerMessages, ReturnedOneMessageTest)
+TEST(ServerMessages, ReturnedOneMessageTest)
 {
     int digit = 1;
     ServerMessages serverMessages;
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
     auto serverAnsuer = serverMessages.GetServerQueshion(getID);
-    auto data
-}*/
+    InterfaceProtobufMessage interfaceProtobufMessage2;
+    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(digit);
+    ASSERT_EQ(rightAnswer, serverAnsuer);
+}
+
+TEST(ServerMessages, ReturnedSessionMessageTest)
+{
+    int digit = 1;
+    ServerMessages serverMessages;
+    InterfaceProtobufMessage interfaceProtobufMessage;
+    auto getID = interfaceProtobufMessage.CreateMessage("GetId");
+    auto serverAnsuer = serverMessages.GetServerQueshion(getID);
+    InterfaceProtobufMessage interfaceProtobufMessage2;
+    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(digit);
+    ASSERT_EQ(rightAnswer, serverAnsuer);
+
+    auto workRightAnsuer = interfaceProtobufMessage.CreateMessage("Work");
+    serverAnsuer = serverMessages.GetServerQueshion(workRightAnsuer);
+    ASSERT_EQ(workRightAnsuer, serverAnsuer);
+
+    auto stop = interfaceProtobufMessage.CreateMessage("Stop");
+    serverAnsuer = serverMessages.GetServerQueshion(stop);
+    rightAnswer = interfaceProtobufMessage.CreateMessage();
+    ASSERT_EQ(rightAnswer, serverAnsuer);
+}

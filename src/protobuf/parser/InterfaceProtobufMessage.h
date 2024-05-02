@@ -19,7 +19,7 @@ public:
     std::string CreateMessage(int);
     std::string CreateMessage(const std::string&);
 
-    static std::map<std::string, std::string> ParseMessage(std::string&);
+    std::map<std::string, std::string> ParseMessage(std::string&);
 
     TestTask::Messages::WrapperMessage& GetMessage();
 

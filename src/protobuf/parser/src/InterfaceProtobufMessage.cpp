@@ -27,6 +27,11 @@ std::string InterfaceProtobufMessage::CreateMessage(const std::string& message) 
 }
 
 std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::string& message) {
+    if((int) message[message.size() - 1] != 0) //When transferring data, the last element is lost
+    {
+        char lastElement = 0;
+        message += std::string(1, lastElement);
+    }
     DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage> parser;
     std::map<std::string, std::string> resultMap
             {
@@ -45,7 +50,10 @@ std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::s
     if(parseRes->has_fast_response())
         resultMap["message_data"] = parseRes->fast_response().message_data();
     if(parseRes->has_slow_response())
+    {
         resultMap["client_id"] = std::to_string(parseRes->slow_response().client_id());
+        this->m_message.mutable_slow_response()->set_client_id(stoi(resultMap["client_id"]));
+    }
     return resultMap;
 }
 

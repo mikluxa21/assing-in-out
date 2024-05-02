@@ -24,7 +24,6 @@ void session::do_read()
                                     std::string getedData = std::string(m_data);
                                     std::string serverAnswer = m_serverMessages.GetServerQueshion(getedData);
                                     std::strcpy(m_data, serverAnswer.c_str());
-                                    std::cout << serverAnswer << std::endl;
                                     do_write(length);
                                 }
                             });
