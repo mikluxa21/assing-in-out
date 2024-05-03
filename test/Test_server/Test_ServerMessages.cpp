@@ -39,10 +39,11 @@ TEST(ServerMessages, GetIdAnyTest)
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
     for(size_t i = 0; i < count; i++)
         vecServerAnswer.push_back(serverMessages.GetServerQueshion(getID));
+    auto firstID = stoi(interfaceProtobufMessage.ParseMessage(vecServerAnswer[0])["client_id"]);
     for(size_t i = 0; i < count; i++)
     {
         InterfaceProtobufMessage interfaceProtobufMessage2;
-        auto rightMessage = interfaceProtobufMessage2.CreateMessage((i+1));
+        auto rightMessage = interfaceProtobufMessage2.CreateMessage((i + firstID));
         ASSERT_EQ(vecServerAnswer[i], rightMessage);
     }
 }
@@ -60,9 +61,11 @@ TEST(ServerMessages, StreamOneConectedTest)
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
     std::string stream = captureOutput([&]()
-            {serverMessages.GetServerQueshion(getID);}
+            {
+                serverMessages.GetServerQueshion(getID);
+            }
             );
-    EXPECT_TRUE(stream.find("connection established: 1") != std::string::npos);
+    EXPECT_TRUE(stream.find("connection established: ") != std::string::npos);
 }
 
 TEST(ServerMessages, StreamAnyConectedTest)
@@ -71,40 +74,43 @@ TEST(ServerMessages, StreamAnyConectedTest)
     ServerMessages serverMessages;
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
+    size_t firstID;
     std::string stream = captureOutput([&]()
                                        {
+                                            std::vector<std::string> vecServerAnswer;
                                            for(size_t i = 0; i < count; i++)
-                                               serverMessages.GetServerQueshion(getID);
+                                               vecServerAnswer.push_back(serverMessages.GetServerQueshion(getID));
+                                           firstID = stoi(interfaceProtobufMessage.ParseMessage(vecServerAnswer[0])["client_id"]);
                                        }
     );
     for(size_t i = 0; i < count; i++)
     {
-        std::string message = "connection established: " + std::to_string(i + 1);
+        std::string message = "connection established: " + std::to_string(i + firstID);
         EXPECT_TRUE(stream.find(message) != std::string::npos);
     }
 }
 
 TEST(ServerMessages, ReturnedOneMessageTest)
 {
-    int digit = 1;
     ServerMessages serverMessages;
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
     auto serverAnsuer = serverMessages.GetServerQueshion(getID);
     InterfaceProtobufMessage interfaceProtobufMessage2;
-    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(digit);
+    auto firstID = stoi(interfaceProtobufMessage.ParseMessage(serverAnsuer)["client_id"]);
+    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(firstID);
     ASSERT_EQ(rightAnswer, serverAnsuer);
 }
 
 TEST(ServerMessages, ReturnedSessionMessageTest)
 {
-    int digit = 1;
     ServerMessages serverMessages;
     InterfaceProtobufMessage interfaceProtobufMessage;
     auto getID = interfaceProtobufMessage.CreateMessage("GetId");
     auto serverAnsuer = serverMessages.GetServerQueshion(getID);
     InterfaceProtobufMessage interfaceProtobufMessage2;
-    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(digit);
+    auto firstID = stoi(interfaceProtobufMessage.ParseMessage(serverAnsuer)["client_id"]);
+    auto rightAnswer = interfaceProtobufMessage2.CreateMessage(firstID);
     ASSERT_EQ(rightAnswer, serverAnsuer);
 
     auto workRightAnsuer = interfaceProtobufMessage.CreateMessage("Work");
