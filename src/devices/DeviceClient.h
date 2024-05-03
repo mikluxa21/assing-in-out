@@ -5,12 +5,12 @@
 #ifndef DEVICECLIENT_H
 #define DEVICECLIENT_H
 
-#include <string>
-#include <memory>
-
 #include "async_client/blocking_tcp_echo_client.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
-#include "protobuf/parser/Parser.h"
+#include "protobuf/parser/InterfaceProtobufMessage.h"
+
+#include <string>
+#include <memory>
 
 
 class DeviceClient
@@ -28,6 +28,6 @@ private:
     std::string m_getId = "GetId";
     std::string m_inWork = "Work";
     std::string m_stop = "Stop";
-
+    InterfaceProtobufMessage m_interfaceProtobufMessage;
 };
 #endif //DEVICECLIENT_H

@@ -10,11 +10,15 @@
 #ifndef ASSING_IN_OUT_ASYNC_TCP_ECHO_SERVER_H
 #define ASSING_IN_OUT_ASYNC_TCP_ECHO_SERVER_H
 
+#include "async_server/ServerMessages.h"
+
 #include <cstdlib>
 #include <iostream>
 #include <memory>
 #include <utility>
 #include <boost/asio.hpp>
+
+
 
 using boost::asio::ip::tcp;
 
@@ -23,7 +27,6 @@ class session
 {
 public:
     explicit session(tcp::socket socket);
-    ~session() {std::cout << "conected loss";}
 
     void start();
 
@@ -35,6 +38,7 @@ private:
     tcp::socket socket_;
     enum { max_length = 1024 };
     char m_data[max_length];
+    ServerMessages m_serverMessages;
 };
 
 class server

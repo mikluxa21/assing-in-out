@@ -1,14 +1,11 @@
 //
-// Created by user on 04.04.24.
+// Created by user on 02.05.24.
 //
-
-
-#include "parallel_executor/DeviceClient.h"
-
+#include "parallel_executor/ParallelClientExecutor.h"
 
 int main()
 {
-    DeviceClient deviceClient;
-    deviceClient.inWork(3);
+    ParallelClientExecutor parallelClientExecutor;
+    parallelClientExecutor.ParallWorker(6, 1);
     return 0;
 }

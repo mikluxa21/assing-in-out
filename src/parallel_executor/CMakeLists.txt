@@ -1,25 +1,28 @@
 set(
-		PROJECT_NAME parallel_executor
+        PROJECT_NAME parallel_executor
 )
 set(HDRS
-		DeviceClient.h
-        )
+        ParallelClientExecutor.h
+)
 
 set(SRCS
-        src/DeviceClient.cpp
-         )
+        src/ParallelClientExecutor.cpp
+)
 
 set(
-		LIB_NAME parall_lib
+        LIB_NAME lib_parallel_executor
 )
 add_library(${LIB_NAME}
-		OBJECT ${SRCS} ${HDRS}
+        OBJECT ${SRCS} ${HDRS}
 )
 add_executable(${PROJECT_NAME}
-		src/main.cpp
+        src/main.cpp
 )
 target_link_libraries(${PROJECT_NAME}
-		${LIB_NAME}
-		lib_client
-		lib_protobuf
+        ${LIB_NAME}
+        lib_client
+        lib_parser
+        lib_proto
+        ${Protobuf_LIBRARIES}
+        lib_devices
 )

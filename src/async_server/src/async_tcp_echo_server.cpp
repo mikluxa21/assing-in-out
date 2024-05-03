@@ -18,15 +18,12 @@ void session::do_read()
     socket_.async_read_some(boost::asio::buffer(m_data, max_length),
                             [this, self](boost::system::error_code ec, std::size_t length)
                             {
+
                                 if (!ec)
                                 {
-                                    std::cout << "Server: ";
-                                    for(auto i: m_data)
-                                        if(i != 0)
-                                            std::cout << i;
-                                        else
-                                            break;
-                                    std::cout << std::endl;
+                                    std::string getedData = std::string(m_data);
+                                    std::string serverAnswer = m_serverMessages.GetServerQueshion(getedData);
+                                    std::strcpy(m_data, serverAnswer.c_str());
                                     do_write(length);
                                 }
                             });

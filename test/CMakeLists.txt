@@ -12,6 +12,10 @@ add_executable(${TEST_NAME}
         #Test_client/Test_blocking_tcp_echo_client.cpp
         Test_message/Test_DelimitedMessagesStreamParser.cpp
         Test_message/Test_Parser.cpp
+        Test_message/Test_InterfaceProtobufMessage.cpp
+        Test_server/Test_ServerMessages.cpp
+        Test_server/Test_ServerMessages.cpp
+        Test_devices/Test_DeviceClient.cpp
         #Test_parallel/Test_DeviceClient.cpp
 )
 add_test(NAME ${TEST_NAME}
@@ -24,8 +28,8 @@ target_link_libraries(${TEST_NAME}
         pthread
         lib_client
         lib_server
-        lib_protobuf
+        lib_parser
         lib_proto
         ${Protobuf_LIBRARIES}
-        parall_lib
+        lib_devices
 )
