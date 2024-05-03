@@ -5,9 +5,6 @@ set(HDRS
 )
 set(SRCS
         src/blocking_tcp_echo_client.cpp
-        ../parallel_executor/src/main.cpp
-        ../parallel_executor/src/ParallelClientExecutor.cpp
-        ../parallel_executor/ParallelClientExecutor.h
 )
 add_library(lib_client OBJECT ${SRCS} ${HDRS})
 
