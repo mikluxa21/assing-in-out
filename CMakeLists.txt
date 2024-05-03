@@ -19,5 +19,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/devices)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/parallel_executor)
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/main)
+
 enable_testing()
 add_subdirectory(test)
