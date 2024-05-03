@@ -3,8 +3,8 @@
 //
 #include "main/MainInterface.h"
 
-int main()
+int main(int argc, const char** argv)
 {
-
-    return 0;
+    MainInterface mainInterface(argc, argv);
+    return mainInterface.exec();
 }
