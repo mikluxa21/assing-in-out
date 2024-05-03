@@ -1,7 +1,3 @@
-//
-// Created by user on 25.04.24.
-//
-
 #ifndef ASYNC_SERVERMESSAGES_H
 #define ASYNC_SERVERMESSAGES_H
 
@@ -17,8 +13,6 @@ public:
 private:
     InterfaceProtobufMessage m_interfaceProtobufMessage;
     static unsigned int m_counterClients;
-
 };
-
 
 #endif //ASYNC_SERVERMESSAGES_H

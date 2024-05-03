@@ -1,5 +1,10 @@
-set(PROJECT_NAME protobuf_parser)
-set(LIB_NAME lib_parser)
+set(PROJECT_NAME
+        protobuf_parser
+)
+
+set(LIB_NAME
+        lib_parser
+)
 set(HDRS
         InterfaceProtobufMessage.h
         DelimitedMessagesStreamParser.h

@@ -1,4 +1,6 @@
-set(PROJECT_NAME server)
+set(PROJECT_NAME
+        server
+)
 
 set(HDRS
         async_tcp_echo_server.h
@@ -8,16 +10,18 @@ set(SRCS
         src/async_tcp_echo_server.cpp
         src/ServerMessages.cpp
 )
-set(
-        LIB_NAME lib_server
+set(LIB_NAME
+        lib_server
 )
 add_library(${LIB_NAME}
-        OBJECT ${SRCS} ${HDRS})
+        OBJECT ${SRCS} ${HDRS}
+)
 
 find_package(Boost 1.58.0 COMPONENTS program_options)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
     add_executable(${PROJECT_NAME}  src/main_server.cpp)
+
     target_link_libraries(${PROJECT_NAME}
             ${Boost_LIBRARIES}
             ${LIB_NAME}

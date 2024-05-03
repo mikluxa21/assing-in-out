@@ -1,7 +1,3 @@
-//
-// Created by user on 04.04.24.
-//
-
 #ifndef DEVICECLIENT_H
 #define DEVICECLIENT_H
 
@@ -11,7 +7,6 @@
 
 #include <string>
 #include <memory>
-
 
 class DeviceClient
 {
@@ -30,4 +25,5 @@ private:
     std::string m_stop = "Stop";
     InterfaceProtobufMessage m_interfaceProtobufMessage;
 };
+
 #endif //DEVICECLIENT_H

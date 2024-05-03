@@ -1,5 +1,6 @@
 #include "async_server/async_tcp_echo_server.h"
-int main(int argc, char* argv[])
+
+int main()
 {
     worker work;
     work.run();

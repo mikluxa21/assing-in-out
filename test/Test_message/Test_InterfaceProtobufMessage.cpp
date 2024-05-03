@@ -1,7 +1,3 @@
-//
-// Created by mikluxa on 23.04.24.
-//
-
 #include "protobuf/parser/InterfaceProtobufMessage.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
 

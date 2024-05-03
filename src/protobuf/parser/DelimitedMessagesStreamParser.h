@@ -1,10 +1,8 @@
-#include <list>
-#include <algorithm>
-#include "Parser.h"
-
-
 #ifndef PROTOBUF_PARSER_DELIMITEDMESSAGESSTREAMPARSER_H
 #define PROTOBUF_PARSER_DELIMITEDMESSAGESSTREAMPARSER_H
+
+#include "Parser.h"
+#include <list>
 
 template<class MessageType>
 class DelimitedMessagesStreamParser

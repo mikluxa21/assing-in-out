@@ -1,5 +1,6 @@
 #ifndef ASYNC_INTERFACE_H
 #define ASYNC_INTERFACE_H
+
 #include "parallel_executor/ParallelClientExecutor.h"
 
 #include <boost/program_options.hpp>
@@ -17,6 +18,5 @@ class Interface {
     int m_countRounds;
     int m_countClients;
 };
-
 
 #endif //ASYNC_INTERFACE_H

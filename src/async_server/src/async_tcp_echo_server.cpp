@@ -1,6 +1,3 @@
-//
-// Created by user on 22.03.24.
-//
 #include "async_server/async_tcp_echo_server.h"
 
 session::session(tcp::socket socket)

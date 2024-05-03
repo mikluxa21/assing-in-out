@@ -9,8 +9,8 @@
 #include "src/protobuf/protobuf/message.pb.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
 
-#include <string>
 #include <map>
+#include <string>
 
 class InterfaceProtobufMessage {
 public:
@@ -25,6 +25,5 @@ public:
 private:
     TestTask::Messages::WrapperMessage m_message;
 };
-
 
 #endif //ASYNC_INTERFACEPROTOBUFMESSAGE_H
