@@ -4,7 +4,7 @@
 
 #include "parallel_executor/ParallelClientExecutor.h"
 
-void ParallelClientExecutor::ParallWorker(size_t countClients, size_t countRounds) {
+void ParallelClientExecutor::ParallWorker(int countClients, int countRounds) {
     std::vector<std::unique_ptr<std::thread>> listOfClients;
     for(size_t i = 0; i < countClients; i++)
     {

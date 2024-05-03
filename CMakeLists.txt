@@ -10,8 +10,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_client)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_server)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/protobuf/parser)
 
@@ -19,7 +17,9 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/devices)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/parallel_executor)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/main)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_client)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/async_server)
 
 enable_testing()
 add_subdirectory(test)

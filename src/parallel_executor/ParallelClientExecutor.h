@@ -12,7 +12,7 @@
 
 class ParallelClientExecutor: public InterfaceDeviceClient{
 public:
-    void ParallWorker(size_t, size_t);
+    void ParallWorker(int, int);
 };
 
 

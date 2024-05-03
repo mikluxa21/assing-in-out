@@ -52,4 +52,10 @@ private:
     tcp::acceptor acceptor_;
 };
 
+class worker
+{
+public:
+    void run(int host = 8080);
+};
+
 #endif //ASSING_IN_OUT_ASYNC_TCP_ECHO_SERVER_H

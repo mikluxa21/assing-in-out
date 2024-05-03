@@ -1,22 +1,18 @@
-//
-// Created by user on 03.05.24.
-//
+#include "async_client/Interface.h"
 
-#include "main/MainInterface.h"
-
-MainInterface::MainInterface(int argc, const char **argv)
+Interface::Interface(int argc, const char **argv)
 {
     m_desc.add_options()
             ("help", "produce help message")  // Вызов help справки
-            ("rounds,r", po::value<int>(&m_countRounds)->default_value(1), "count rounds for client")
-            ("clients,c", po::value<int>(&m_countClients)->default_value(1), "count clients")
+            ("clients,c", po::value<int>(&this->m_countClients)->default_value(1), "count clients")
+            ("rounds,r", po::value<int>(&this->m_countRounds)->default_value(1), "count rounds for client")
             ;
     po::store(po::parse_command_line(argc, argv, m_desc), m_vm);
     po::notify(m_vm);
 
-};
+}
 
-int MainInterface::exec()
+int Interface::exec()
 {
     if (m_vm.count("help"))
     {
@@ -26,7 +22,8 @@ int MainInterface::exec()
 
     if (this->m_countRounds && this->m_countClients)
     {
-
+        ParallelClientExecutor parallelClientExecutor;
+        parallelClientExecutor.ParallWorker(this->m_countClients, this->m_countRounds);
     }
     else
     {
