@@ -16,7 +16,7 @@ public:
 
 private:
     InterfaceProtobufMessage m_interfaceProtobufMessage;
-    size_t m_counterClients;
+    static unsigned int m_counterClients;
 
 };
 

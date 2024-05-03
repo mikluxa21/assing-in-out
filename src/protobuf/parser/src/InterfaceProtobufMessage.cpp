@@ -26,6 +26,10 @@ std::string InterfaceProtobufMessage::CreateMessage(const std::string& message) 
     return std::string(resMessage->begin(), resMessage->end());
 }
 
+void InterfaceProtobufMessage::SetClientId(int id) {
+    this->m_message.mutable_slow_response()->set_client_id(id);
+}
+
 std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::string& message) {
     if((int) message[message.size() - 1] != 0) //When transferring data, the last element is lost
     {
@@ -53,5 +57,3 @@ std::map<std::string, std::string> InterfaceProtobufMessage::ParseMessage(std::s
         resultMap["client_id"] = std::to_string(parseRes->slow_response().client_id());
     return resultMap;
 }
-
-
