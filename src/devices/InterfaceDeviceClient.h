@@ -8,7 +8,7 @@
 
 class InterfaceDeviceClient {
 public:
-    static void run(size_t countRounds);
+    void run(size_t countRounds);
 };
 
 
