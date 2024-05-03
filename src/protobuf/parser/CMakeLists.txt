@@ -9,11 +9,4 @@ set(SRCS
         src/DelimitedMessagesStreamParser.cpp
         src/InterfaceProtobufMessage.cpp
 )
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_link_libraries(${PROJECT_NAME}
-        ${LIB_NAME}
-        lib_parser
-        lib_proto
-        ${Protobuf_LIBRARIES}
-)
 add_library(${LIB_NAME} OBJECT ${SRCS} ${HDRS})
