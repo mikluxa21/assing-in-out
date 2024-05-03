@@ -4,12 +4,14 @@
 
 #include "parallel_executor/ParallelClientExecutor.h"
 
-ParallelClientExecutor::ParallelClientExecutor(size_t countClient, size_t countRounds) {
-    this->run(countClient, countRounds);
-}
+void ParallelClientExecutor::ParallWorker(size_t countClients, size_t countRounds) {
+    std::vector<std::unique_ptr<std::thread>> listOfClients;
+    for(size_t i = 0; i < countClients; i++)
+    {
+        listOfClients.push_back(std::make_unique<std::thread>(std::thread(&InterfaceDeviceClient::run, this, countRounds)));
+    }
+    for (size_t i = 0; i < countClients; i++)
+        if (listOfClients[i]->joinable())
+            listOfClients[i]->join();
 
-void ParallelClientExecutor::run(size_t countClients, size_t countRounds) {
-    std::list<std::unique_ptr<std::thread>> listOfClients;
-    //for(size_t i = 0; i < countClients; i++)
-        //listOfClients.push_back(std::make_unique<std::thread>(std::thread(DeviceClient())));
 }

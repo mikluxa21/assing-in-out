@@ -5,16 +5,14 @@
 #ifndef ASYNC_PARALLELCLIENTEXECUTOR_H
 #define ASYNC_PARALLELCLIENTEXECUTOR_H
 
-#include "devices/DeviceClient.h"
+#include "devices/InterfaceDeviceClient.h"
 
+#include <thread>
 #include <memory>
-#include <list>
 
-class ParallelClientExecutor {
+class ParallelClientExecutor: public InterfaceDeviceClient{
 public:
-    ParallelClientExecutor(size_t countClients = 1, size_t countRounds = 1);
-private:
-    void run(size_t countClients = 1, size_t countRounds = 1);
+    void ParallWorker(size_t, size_t);
 };
 
 
