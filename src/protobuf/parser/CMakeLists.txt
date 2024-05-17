@@ -6,12 +6,13 @@ set(LIB_NAME
         lib_parser
 )
 set(HDRS
+        Parser.h
         InterfaceProtobufMessage.h
         DelimitedMessagesStreamParser.h
-        Parser.h
 )
 set(SRCS
-        src/DelimitedMessagesStreamParser.cpp
         src/InterfaceProtobufMessage.cpp
 )
-add_library(${LIB_NAME} OBJECT ${SRCS} ${HDRS})
+add_library(${LIB_NAME}
+        OBJECT ${SRCS} ${HDRS}
+)
