@@ -1,9 +1,4 @@
-//
-// Created by user on 12.04.24.
-//
-
 #include "protobuf/parser/InterfaceProtobufMessage.h"
-
 
 InterfaceProtobufMessage::InterfaceProtobufMessage() {
     this->m_message.mutable_request_for_fast_response();

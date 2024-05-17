@@ -2,7 +2,6 @@
 #include "src/protobuf/protobuf/message.pb.h"
 #include <gtest/gtest.h>
 
-
 TEST(Parser, OneFastRequest)
 {
   std::list<typename DelimitedMessagesStreamParser<TestTask::Messages::WrapperMessage>::PointerToConstValue> messages;
@@ -236,6 +235,3 @@ TEST(Parser, CorruptedData)
   stream[data->size()] = '\x03';
   EXPECT_THROW(parser.parse(stream), std::runtime_error);
 }
-
-
-

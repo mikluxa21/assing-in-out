@@ -1,5 +1,6 @@
 #include "protobuf/parser/Parser.h"
 #include "src/protobuf/protobuf/message.pb.h"
+
 #include <gtest/gtest.h>
 
 TEST(ParseDelimited, DefaultTest)

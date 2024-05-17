@@ -1,6 +1,3 @@
-//
-// Created by user on 22.03.24.
-//
 #include "async_server/async_tcp_echo_server.h"
 
 session::session(tcp::socket socket)
@@ -62,3 +59,18 @@ void server::do_accept()
             });
 }
 
+void worker::run(int host)
+{
+    try
+    {
+        boost::asio::io_context io_context;
+
+        server s(io_context, host);
+
+        io_context.run();
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << "Exception: " << e.what() << "\n";
+    }
+}
