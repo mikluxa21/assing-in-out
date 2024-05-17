@@ -8,11 +8,11 @@
 namespace po = boost::program_options;
 
 class Interface {
-    public:
+public:
     explicit Interface(int argc, const char** argv);
     int exec();
 
-    private:
+private:
     po::options_description m_desc {"Allowed options"};
     po::variables_map m_vm;
     int m_countRounds;

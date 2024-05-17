@@ -3,7 +3,7 @@
 Interface::Interface(int argc, const char **argv)
 {
     m_desc.add_options()
-            ("help", "produce help message")  // Вызов help справки
+            ("help,h", "produce help message")
             ("clients,c", po::value<int>(&this->m_countClients)->default_value(1), "count clients")
             ("rounds,r", po::value<int>(&this->m_countRounds)->default_value(1), "count rounds for client")
             ;
