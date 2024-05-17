@@ -17,10 +17,14 @@ add_library(${LIB_NAME}
         OBJECT ${SRCS} ${HDRS}
 )
 
-find_package(Boost 1.58.0 COMPONENTS program_options)
+find_package(Boost COMPONENTS program_options)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    add_executable(${PROJECT_NAME}  src/main_server.cpp)
+    add_executable(${PROJECT_NAME}
+            src/main_server.cpp
+            InterfaceServer.h
+            src/InterfaceServer.cpp
+    )
 
     target_link_libraries(${PROJECT_NAME}
             ${Boost_LIBRARIES}
