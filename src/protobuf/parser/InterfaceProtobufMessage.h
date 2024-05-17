@@ -1,11 +1,6 @@
-//
-// Created by user on 12.04.24.
-//
-
 #ifndef ASYNC_INTERFACEPROTOBUFMESSAGE_H
 #define ASYNC_INTERFACEPROTOBUFMESSAGE_H
 
-#include "protobuf/parser/Parser.h"
 #include "src/protobuf/protobuf/message.pb.h"
 #include "protobuf/parser/DelimitedMessagesStreamParser.h"
 
