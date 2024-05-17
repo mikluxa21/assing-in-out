@@ -1,8 +1,7 @@
-#include "async_server/async_tcp_echo_server.h"
+#include "async_server/InterfaceServer.h"
 
-int main()
+int main(int argc, const char **argv)
 {
-    worker work;
-    work.run();
-    return 0;
+    InterfaceServer interfaceServer(argc, argv);
+    return interfaceServer.exec();
 }
