@@ -2,13 +2,19 @@ set(PROJECT_NAME
         server
 )
 
+include_directories(
+        ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+include_directories(
+        ${CMAKE_SOURCE_DIR}/src
+)
+
 set(HDRS
         async_tcp_echo_server.h
-        ServerMessages.h
 )
 set(SRCS
         src/async_tcp_echo_server.cpp
-        src/ServerMessages.cpp
 )
 set(LIB_NAME
         lib_server
@@ -29,8 +35,5 @@ if(Boost_FOUND)
     target_link_libraries(${PROJECT_NAME}
             ${Boost_LIBRARIES}
             ${LIB_NAME}
-            lib_parser
-            lib_proto
-            ${Protobuf_LIBRARIES}
     )
 endif()

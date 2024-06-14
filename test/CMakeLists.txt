@@ -17,9 +17,6 @@ set(TEST_NAME
         executor_test
 )
 add_executable(${TEST_NAME}
-        Test_message/Test_DelimitedMessagesStreamParser.cpp
-        Test_message/Test_Parser.cpp
-        Test_message/Test_InterfaceProtobufMessage.cpp
         Test_server/Test_ServerMessages.cpp
         Test_server/Test_ServerMessages.cpp
 )
@@ -33,10 +30,4 @@ target_link_libraries(${TEST_NAME}
         gtest
         gtest_main
         pthread
-        lib_client
-        lib_server
-        lib_parser
-        lib_proto
-        ${Protobuf_LIBRARIES}
-        lib_devices
 )

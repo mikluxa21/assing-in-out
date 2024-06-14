@@ -4,8 +4,9 @@ session::session(tcp::socket socket)
         : socket_(std::move(socket))
 {}
 
-void session::start()
+void session::start(size_t sessionId)
 {
+    this->m_sessionId = sessionId;
     do_read();
 }
 
@@ -18,11 +19,9 @@ void session::do_read()
 
                                 if (!ec)
                                 {
-                                    std::string getedData = std::string(m_data);
-                                    std::string serverAnswer = m_serverMessages.GetServerQueshion(getedData);
-                                    std::strcpy(m_data, serverAnswer.c_str());
                                     do_write(length);
                                 }
+                                this->async_receive(ec, max_length);
                             });
 }
 
@@ -39,6 +38,16 @@ void session::do_write(std::size_t length)
                              });
 }
 
+void session::async_receive(boost::system::error_code const& error,
+                     size_t bytes_transferred)
+  {
+    if ((boost::asio::error::eof == error) ||
+        (boost::asio::error::connection_reset == error))
+    {
+      std::cout << "connection lost: " << this->m_sessionId << std::endl;
+    }
+  }
+
 server::server(boost::asio::io_context &io_context, short port = 80)
         : acceptor_(io_context, tcp::endpoint(tcp::v4(), port))
 {
@@ -52,7 +61,8 @@ void server::do_accept()
             {
                 if (!ec)
                 {
-                    std::make_shared<session>(std::move(socket))->start();
+                    std::make_shared<session>(std::move(socket))->start(this->m_clientCounter);
+                    std::cout << "connection established: " << this->m_clientCounter++ << std::endl;
                 }
 
                 do_accept();
@@ -71,6 +81,6 @@ void worker::run(int host)
     }
     catch (std::exception& e)
     {
-        std::cerr << "Exception: " << e.what() << "\n";
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 }

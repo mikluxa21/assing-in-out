@@ -26,9 +26,6 @@ if(Boost_FOUND)
     target_link_libraries(${PROJECT_NAME}
             ${Boost_LIBRARIES}
             ${LIB_NAME}
-            lib_parser
-            lib_proto
-            ${Protobuf_LIBRARIES}
             lib_devices
             lib_parallel_executor
     )

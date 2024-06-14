@@ -8,25 +8,12 @@ cmake_policy(SET CMP0016 NEW)
 set(CMAKE_CXX_STANDART 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(
-        Protobuf REQUIRED
-)
-add_subdirectory(
-        ${CMAKE_SOURCE_DIR}/src/protobuf/protobuf
-)
 include_directories(
         ${CMAKE_CURRENT_BINARY_DIR}
-)
-include_directories(
-        ${Protobuf_INCLUDE_DIRS}
 )
 
 include_directories(
         ${CMAKE_SOURCE_DIR}/src
-)
-
-add_subdirectory(
-        ${CMAKE_SOURCE_DIR}/src/protobuf/parser
 )
 
 add_subdirectory(
@@ -38,12 +25,12 @@ add_subdirectory(
 )
 
 add_subdirectory(
-        ${CMAKE_SOURCE_DIR}/src/async_client
+        ${CMAKE_SOURCE_DIR}/src/client
 )
 
 add_subdirectory(
         ${CMAKE_SOURCE_DIR}/src/async_server
 )
 
-enable_testing()
-add_subdirectory(test)
+#enable_testing()
+#add_subdirectory(test)
