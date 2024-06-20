@@ -32,5 +32,5 @@ add_subdirectory(
         ${CMAKE_SOURCE_DIR}/src/async_server
 )
 
-#enable_testing()
-#add_subdirectory(test)
+enable_testing()
+add_subdirectory(test)

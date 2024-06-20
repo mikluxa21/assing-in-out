@@ -17,8 +17,7 @@ set(TEST_NAME
         executor_test
 )
 add_executable(${TEST_NAME}
-        Test_server/Test_ServerMessages.cpp
-        Test_server/Test_ServerMessages.cpp
+        test_server/test_async_tcp_echo_server.cpp
 )
 
 add_test(NAME ${TEST_NAME}
@@ -30,4 +29,8 @@ target_link_libraries(${TEST_NAME}
         gtest
         gtest_main
         pthread
+        lib_client
+        lib_server
+        lib_devices
+        lib_parallel_executor
 )
