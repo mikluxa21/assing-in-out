@@ -21,7 +21,7 @@ void session::do_read()
                                 {
                                     do_write(length);
                                 }
-                                this->async_receive(ec, max_length);
+                                this->async_receive(ec);
                             });
 }
 
@@ -38,8 +38,7 @@ void session::do_write(std::size_t length)
                              });
 }
 
-void session::async_receive(boost::system::error_code const& error,
-                     size_t bytes_transferred)
+void session::async_receive(boost::system::error_code const& error)
   {
     if ((boost::asio::error::eof == error) ||
         (boost::asio::error::connection_reset == error))

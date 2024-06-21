@@ -22,7 +22,7 @@ private:
 
     void do_write(std::size_t length);
     
-    void async_receive(boost::system::error_code const& error, size_t bytes_transferred);
+    void async_receive(boost::system::error_code const& error);
 
     tcp::socket socket_;
     enum { max_length = 1024 };
