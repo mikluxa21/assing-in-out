@@ -17,6 +17,7 @@ set(TEST_NAME
         executor_test
 )
 add_executable(${TEST_NAME}
+        test_client/test_blocking_tcp_echo_client.cpp
         test_server/test_async_tcp_echo_server.cpp
 )
 
