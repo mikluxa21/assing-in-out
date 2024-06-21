@@ -9,7 +9,7 @@ Client::Client(std::string host, std::string port)
     }
     catch (std::exception& e)
     {
-        std::cerr << "Exception: " << e.what() << std::endl;
+        throw std::runtime_error("Exception: " + std::string(e.what()));
     }
 }
 
@@ -21,7 +21,7 @@ std::string Client::sendMessage(std::string message) {
         reply_length = boost::asio::read(this->m_s, boost::asio::buffer(reply, message.length()));
     }
     catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
+        throw std::runtime_error("Exception: " + std::string(e.what()));
     }
     return std::string(reply);
 }
