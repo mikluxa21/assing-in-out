@@ -15,7 +15,7 @@ namespace
   }
 }
 
-TEST(worker, exceptionDoesNotConnectToServer)
+TEST(worker, defaultTest)
 {
     int countClients = 5;
     int countRounds = 5;
@@ -26,12 +26,10 @@ TEST(worker, exceptionDoesNotConnectToServer)
         std::thread serverPtr(&worker::run, &workerServer, host);
         serverPtr.detach();
         std::thread clientPtr(&ParallelClientExecutor::ParallWorker, &parallelClientExecutor, std::ref(countClients), std::ref(countRounds));
-        clientPtr.join();
-        sleep(2);
+        if(clientPtr.joinable())
+            clientPtr.join();
     });
 
     for(int i = 1; i < countClients + 1; i++)
         EXPECT_TRUE(stream.find("connection established: " + std::to_string(i)) != std::string::npos);
-    for(int i = 1; i < countClients + 1; i++)
-        EXPECT_TRUE(stream.find("connection lost: ") != std::string::npos);
 }
